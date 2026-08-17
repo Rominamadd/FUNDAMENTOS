@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string nombre;
+    cout<<"ingresa tu nombre";
+    cin>>nombre;
+    cout<<"****************************"<<endl;
+    cout<<endl<<"*     hola "<<nombre<<"          *"<<endl;
+    cout<<endl<<"****************************";
+    return 0;
+}
