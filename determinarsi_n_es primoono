@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    int  i, n;
+  
+    cout<<"Ingrese un numero entero: ";
+    cin>>n;
+    
+    for (i = 2; i<=sqrt(n);i ++)
+        if(n%i==0){
+          cout<<" No es primo";
+          return 0;
+        }
+    cout<<"Es primo";
+    return 0;
+}
