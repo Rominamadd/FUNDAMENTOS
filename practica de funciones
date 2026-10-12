@@ -1,0 +1,102 @@
+#include <iostream>
+using namespace std;
+//prototipos
+
+void menu();
+void primerapregunta(int edad, int nota);
+
+int precio(int x);
+float totalapagar(int cantidad, float precio);
+
+int main()
+{
+    int edad, nota;
+    int peso;
+    float a,b,total;
+    int opcion;
+    //Menu 
+    do {
+        //Desplegar las opciones
+        menu(); // Como llamar a una funcion con void
+        cin >> opcion;
+        //Condicion multiple
+        switch (opcion)
+        {
+        case 1:
+            // utilizar una funcion con void
+            cout << "Ingrese la edad: ";
+            cin >> edad;
+            cout << "Ingrese la nota: ";
+            cin >> nota;
+            primerapregunta(edad,nota);
+            break;
+        case 2:
+            // utilizar una funcion que devuelve valor e imprime directamente 
+            cout << "Ingrese el peso: ";
+            cin >> peso;
+            cout << "El costo es: " << precio (peso);
+            break;
+        case 3:
+            //utilizar una funcion que devuelve un valor y asigna a una variable
+            cout << "Ingrese la cantidad: ";
+            cin >> b;
+            cout << "Ingrese el precio: ";
+            cin >> a;
+            cout << "El costo total es: ";
+            total = totalapagar(b, a)
+                cout << total;
+            break;
+        case 0: cout << "saliendo del Menu";
+            break;
+        default: cout << "ERROR de opcion";
+            break;
+        }
+        system("pause");
+        system("cls");
+    } while (opcion != 0);
+}
+
+    // Declaracion de las funciones
+
+
+ void menu() { //procedimiento
+    cout << "\t\t Menu \n";
+    cout << "\t\ ==== \n";
+    cout << "1. Determinar la aprobacion\n";
+    cout << "2. Determinar el precio\n";
+    cout << "3. Calcular el total a pagar\n"; 
+    cout << "0. Salir\n";
+    cout << "Opcion: ";
+    // no retorna nada
+}
+
+void primerapregunta(int edad, int nota) {
+    cout << "Aprobado o Desaprobado";
+}
+
+int precio(int x) {
+    int costo;
+    if (x <= 2)
+        costo = 15;
+    else if (x > 2 && x<=5)
+        costo = 25;
+    else if (x > 5 && x <= 10)
+        costo = 40;
+    else
+        costo = 60;
+    return costo;
+}
+    
+float totalapagar(int cantidad, float precio) {
+    float resultado, descuento;
+    if (cantidad < 3)
+        descuento = (cantidad * precio) * 0, 1;
+        resultado = (cantidad * precio) - descuento;
+    }
+    else {
+        descuento = (cantidad * precio) * 0, 2;
+        resultado = (cantidad * precio) - descuento;
+    }
+    return resultado;
+
+}
