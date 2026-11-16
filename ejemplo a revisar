@@ -1,0 +1,111 @@
+#include <iostream>
+#include <string>
+#define MAX 100
+using namespace std;
+//Variables globales: lo pueden usar las funciones y en el main 
+
+// Estructuras
+
+struct Usuario {
+    string nombre;
+    string clave;
+
+};
+struct Persona {
+    string nombre;
+    string fechanac;
+    string ci;
+    string direccion;
+    string telefono;
+    string paginaweb;
+};
+ //Arreglos de las estructutar declaradas
+Usuario Usuarios[MAX];
+Persona personas[MAX];
+//tamaño del vector
+int nUsuarios = 0;
+int nPersonas = 0;
+
+//Prototipos
+void registrarUsuario();
+bool login();
+void menuPersonas();
+int main()
+{
+    int opcion;
+    do {
+        cout << "Sistema de Login"<< endl;
+        cout << "1. Registrar usuario" << endl;
+        cout << "2. Listar usuarios" << endl;
+        cout << "3. Iniciar sesion" << endl;
+        cout << "4. Borrar Usuario" << endl;
+        cout << "5. Modificar usuario" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: " ;
+        cin >> opcion;
+        switch (opcion) {
+            case 1:
+                registrarUsuario();
+                break;
+            case 2:
+                break;
+            case 3:
+                if (login())
+                   // menuPersonas();
+                cout << "Ingresando al menu personas";
+                break;
+            case 0:
+                break;
+            default:
+
+
+
+        }
+
+
+    } while (opcion != 0);
+    return 0;
+
+   
+    void  registrarUsuario(); {
+        string nombre;
+        cout << "\n Registrar Usuario \n";
+        cout << " Ingrese Usuario";
+        cin >> nombre;
+        //ERROR
+        for (int i = 0; i < nUsuarios; i++)
+            if (Usuarios[i].nombre == nombre)
+                cout << "Usuario ya existe";
+                return;
+         
+        //REGISTRO
+
+        Usuarios[nUsuarios], nombre = nombre; //Asi se registra en uno de los miembros del struct
+        cout << "Ingrese contraseña: ";
+        cin >> Usuarios[nUsuarios].clave;//Asi se registra en uno de los miembros del struct
+        nUsuarios++;
+
+        cout << "Usuario registrado" <<endl;
+              
+    }
+
+    bool login();
+    {
+        string nombre, clave; //Locales a esta funcion
+        cout << "\n Iniciar Sesion \n";
+        cout << " Usuario:";
+        cin >> nombre;
+        cout << " Contrasenia: ";
+        cin >> clave;
+        for (int i = 0; i < nUsuarios; i++) 
+        {
+            if ((Usuarios[i].nombre == nombre) && (Usuarios[i].clave == clave)){
+                cout << "Bienvenido" << nombre;
+                    return true;
+            }
+         
+        }
+        cout << "Usuario o contrasenia incorrectas \n" ;
+        return false;
+    }
+
